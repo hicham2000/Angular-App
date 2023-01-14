@@ -9,7 +9,12 @@ import {Recipe} from "../recipe.model";
 })
 export class RecipeListComponent {
   recipes:Recipe[] = [
-    new Recipe('A test racipe','test discription','https://www.bbcgoodfoodme.com/wp-content/uploads/2023/01/Braised-beef-cottage-pie.jpg')
+    new Recipe('A test racipe',
+      'test discription',
+      'https://www.bbcgoodfoodme.com/wp-content/uploads/2023/01/Braised-beef-cottage-pie.jpg'),
+new Recipe('A test racipe',
+      'test discription',
+      'https://www.bbcgoodfoodme.com/wp-content/uploads/2023/01/Braised-beef-cottage-pie.jpg')
 
   ];
 
