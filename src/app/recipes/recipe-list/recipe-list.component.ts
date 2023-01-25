@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {Recipe} from "../recipe.model";
 
 
@@ -9,13 +9,17 @@ import {Recipe} from "../recipe.model";
 })
 export class RecipeListComponent {
   recipes:Recipe[] = [
-    new Recipe('A test racipe',
-      'test discription',
+    new Recipe('A test racipe 1',
+      'test discription 1',
       'https://www.bbcgoodfoodme.com/wp-content/uploads/2023/01/Braised-beef-cottage-pie.jpg'),
-new Recipe('A test racipe',
-      'test discription',
+new Recipe('A test racipe 2',
+      'test discription 2',
       'https://www.bbcgoodfoodme.com/wp-content/uploads/2023/01/Braised-beef-cottage-pie.jpg')
 
   ];
+@Output("recipeInfo") res= new EventEmitter<any>();
+  onrecive(recipe:any){
+    this.res.emit(recipe);
+  }
 
 }
