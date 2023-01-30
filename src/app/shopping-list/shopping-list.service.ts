@@ -6,14 +6,14 @@ import {ingredient} from "../shared/ingredient.model";
 })
 export class ShoppingListService {
 
-  ingredientschanged=new EventEmitter<any>();
+  // ingredientschanged=new EventEmitter<any>();
   ingredients:any = [new ingredient("banana",4)];
 
 
 
   onadd(name:any,amount:any){
     this.ingredients.push(new ingredient(name,amount));
-    this.ingredientschanged.emit(this.ingredients);
+    // this.ingredientschanged.emit(this.ingredients);
   }
   constructor() { }
 }

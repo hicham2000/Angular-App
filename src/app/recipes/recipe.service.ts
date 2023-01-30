@@ -1,21 +1,25 @@
 import {EventEmitter, Injectable} from '@angular/core';
 import {Recipe} from "./recipe.model";
+import {ingredient} from "../shared/ingredient.model";
 
 @Injectable({
   providedIn: 'root'
 })
 export class RecipeService {
-  recipes:Recipe[] = [
+  recipe:any;
+  recipes:any = [
     new Recipe('A test racipe 1',
       'test discription 1',
-      'https://www.bbcgoodfoodme.com/wp-content/uploads/2023/01/Braised-beef-cottage-pie.jpg'),
+      'https://www.bbcgoodfoodme.com/wp-content/uploads/2023/01/Braised-beef-cottage-pie.jpg',
+      [new ingredient("milk",5),new ingredient("apple",10)]) ,
     new Recipe('A test racipe 2',
       'test discription 2',
-      'https://www.bbcgoodfoodme.com/wp-content/uploads/2023/01/Braised-beef-cottage-pie.jpg')
+      'https://www.bbcgoodfoodme.com/wp-content/uploads/2023/01/Braised-beef-cottage-pie.jpg',
+  [new ingredient("bread",5),new ingredient("token",10)])
 
   ];
 
-  recepesSelected = new EventEmitter<Recipe>();
+  recepesSelected = new EventEmitter<any>();
 
   constructor() { }
 }
