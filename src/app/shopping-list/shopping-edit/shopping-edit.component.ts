@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Output} from '@angular/core';
+import {ShoppingListService} from "../shopping-list.service";
 
 @Component({
   selector: 'app-shopping-edit',
@@ -7,10 +8,13 @@ import {Component, EventEmitter, Output} from '@angular/core';
 })
 export class ShoppingEditComponent {
 
-  @Output("list") list = new EventEmitter<{ name: string, amount: number; }>();
 
-  onclick(name:any,amount:any){
-    this.list.emit({name:name.value,amount:amount.value});
+constructor(private shooping:ShoppingListService) {
+}
+
+  onclick(name: any, amount: any) {
+    this.shooping.onadd(name.value,amount.value);
+
   }
 
 }
