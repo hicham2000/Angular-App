@@ -15,5 +15,9 @@ export class ShoppingListService {
     this.ingredients.push(new ingredient(name,amount));
     // this.ingredientschanged.emit(this.ingredients);
   }
+
+  add(ingrediant:any){
+    this.ingredients.push(...ingrediant);
+  }
   constructor() { }
 }

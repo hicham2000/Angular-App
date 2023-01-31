@@ -13,10 +13,12 @@ export class RecipeDetailComponent {
   constructor(private shop:ShoppingListService) {
   }
 
-  toshoppinglist(ing:any){
-    for (let i=0;i<ing.length;i++){
+  toshoppinglist() {
+    for (let i = 0; i < this.recipe.ingrediants.length; i++) {
       // console.log(ing[i].name);
-      this.shop.onadd(ing[i].name,ing[i].amount);
+      // console.log(this.recipe.ingrediants[0].name);
+      this.shop.onadd(this.recipe.ingrediants[i].name, this.recipe.ingrediants[i].amount);
     }
   }
+
 }
