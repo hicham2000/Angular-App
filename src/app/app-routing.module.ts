@@ -6,7 +6,6 @@ import {AppComponent} from "./app.component";
 const routes: Routes = [
 
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
