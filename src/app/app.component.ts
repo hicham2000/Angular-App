@@ -10,7 +10,5 @@ export class AppComponent {
 
   section:string="recipe";
 
-  onrecive(sec:string){
-    this.section=sec;
-  }
+
 }

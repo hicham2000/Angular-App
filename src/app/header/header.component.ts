@@ -7,13 +7,7 @@ import {Component, EventEmitter, Output} from '@angular/core';
 })
 export class HeaderComponent {
 
-@Output("section") section=new EventEmitter<string>();
-  onrecipe(){
-    this.section.emit("recipe");
-  }
 
-  onlist(){
-    this.section.emit("shoplist");
-  }
+
 
 }
