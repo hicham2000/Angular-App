@@ -5,14 +5,16 @@ import {ShoppingListComponent} from "./shopping-list/shopping-list.component";
 import {RecipesComponent} from "./recipes/recipes.component";
 import {RecipeDetailComponent} from "./recipes/recipe-detail/recipe-detail.component";
 import {RecipeEditComponent} from "./recipes/recipe-edit/recipe-edit.component";
+import {RecipeStartComponent} from "./recipes/recipe-start/recipe-start.component";
 
 
 const routes: Routes = [
   {path:"",redirectTo:'/recipes',pathMatch:'full'},
   {path:"shopping-list",component:ShoppingListComponent},
   {path:"recipes",component:RecipesComponent , children:[
-      {path:"recipe-detail",component:RecipeDetailComponent},
-      {path:"recipe-edit",component:RecipeEditComponent}
+      {path:"",component:RecipeStartComponent},
+      {path:":id/detail",component:RecipeDetailComponent},
+      {path:":id/edit",component:RecipeEditComponent}
     ]},
 
   {path:"**",redirectTo:'/recipes'}
