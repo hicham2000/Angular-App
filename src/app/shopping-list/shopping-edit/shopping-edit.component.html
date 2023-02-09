@@ -1,19 +1,24 @@
 <div class="row">
   <div class="col-xs-12">
-    <form  >
+    <form  (ngSubmit)="onclick(f)"  #f="ngForm">
       <div class="row">
         <div class="col-sm-5 form-group">
           <label >Name</label>
-          <input type="text"  class="form-control" #name>
+          <input type="text"  class="form-control"  ngModel name="name" required>
 
         </div>
           <div class="col-sm-2 form-group">
             <label >Amount</label>
-            <input type="text" class="form-control" #amount>
+            <input type="number" class="form-control"  ngModel name="amount" required pattern="\d+">
           </div>
         <div class="row">
           <div class="col-xs-12">
-            <button class="btn btn-success" type="button" (click)="onclick(name,amount)">Add</button>
+<!--            <button class="btn btn-success" type="button" (click)="onclick(name,amount)">Add</button>-->
+            <button
+              class="btn btn-success"
+              type="submit"
+              [disabled]="!f.valid"
+            >{{editemode ? "Update":"Add"}}</button>
             <button class="btn btn-danger" type="button">Delete</button>
           <button class="btn btn-primary" type="button">Clear</button>
           </div>

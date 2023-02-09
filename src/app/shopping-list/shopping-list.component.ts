@@ -23,6 +23,10 @@ export class ShoppingListComponent implements OnInit{
     // )
   }
 
+  onclick(index:number){
+    this.shopping.startEditing.next(index);
+  }
+
 
 
 }
