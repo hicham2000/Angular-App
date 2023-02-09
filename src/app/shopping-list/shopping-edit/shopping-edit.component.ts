@@ -25,9 +25,10 @@ constructor(private shooping:ShoppingListService) {
   // }
 
   onclick(input:NgForm){
-  if(this.editemode===false){
+  if(!this.editemode){
 
     this.shooping.onadd(input.value.name,input.value.amount);
+    this.inputControl.reset();
   }
   else {
     this.shooping.update(this.ingridiantIndex,new ingredient(input.value.name,input.value.amount));
@@ -52,5 +53,15 @@ constructor(private shooping:ShoppingListService) {
 
   ngOnDestroy() {
   this.subscription.unsubscribe();
+  }
+
+  onClear() {
+    this.inputControl.reset();
+    this.editemode=false;
+  }
+
+  onDelete(){
+  this.onClear();
+  this.shooping.ingredients.splice(this.ingridiantIndex,1);
   }
 }
