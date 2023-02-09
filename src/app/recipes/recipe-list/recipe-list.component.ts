@@ -15,6 +15,10 @@ export class RecipeListComponent implements OnInit{
   ngOnInit() {
     this.recipes=this.recipe.recipes;
   }
+
+  onclick(index:number){
+    this.recipe.editRecipe.next(index);
+  }
 @Output("recipeInfo") res= new EventEmitter<any>();
 
 
